@@ -1,0 +1,33 @@
+<div class="col-xs-12">
+	<a style="margin-bottom: 10px;" href="#!/addMember" class="btn btn-primary waves-effect waves-light add">
+			<i style="margin-right: 5px !important;" class="glyphicon glyphicon-plus"></i>Add
+		  </a>
+	<div class="box">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Name</th>
+					<th>Account</th>
+					<th>Birthday</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in c80s | orderBy: 'id'">
+					<td>{{item.id | uppercase}}</td>
+					<td>{{item.name | uppercase}}</td>
+					<td>{{item.account }}</td>
+					<td>{{item.birthday }}</td>
+					<td style="white-space: nowrap; width: 1%;">
+						<div class="tabledit-toolbar btn-toolbar" >
+						<a href="#!/addMember/edit/{{item.id}}" class="btn btn-sm btn-info" style="float: none;" >
+				<span class="glyphicon glyphicon-pencil"></span>
+			</a>		<button type="button" ng-click="removeMember(item)"  class="btn btn-sm btn-danger" style="float: none;">
+				<span class="glyphicon glyphicon-trash"></span>
+			</button></div></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
